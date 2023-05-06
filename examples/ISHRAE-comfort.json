@@ -1,0 +1,386 @@
+[
+    {
+        "id": "bce4a3f29b113e68",
+        "type": "tab",
+        "label": "ISHRAE Comfort Calculations",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e23021f2f361e457",
+        "type": "ishrae-comfort",
+        "z": "bce4a3f29b113e68",
+        "name": "",
+        "x": 830,
+        "y": 340,
+        "wires": [
+            [
+                "8dc0a7173b148fa6"
+            ]
+        ]
+    },
+    {
+        "id": "8dc0a7173b148fa6",
+        "type": "debug",
+        "z": "bce4a3f29b113e68",
+        "name": "debug 137",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c1e30bc91126a023",
+        "type": "inject",
+        "z": "bce4a3f29b113e68",
+        "name": "airTemperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "25",
+        "payloadType": "num",
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "7f8f6b5bb19f8972"
+            ]
+        ]
+    },
+    {
+        "id": "1e14f1b88ca964b4",
+        "type": "inject",
+        "z": "bce4a3f29b113e68",
+        "name": "radiantTemperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "25",
+        "payloadType": "num",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "4afa09d98bc1c3a0"
+            ]
+        ]
+    },
+    {
+        "id": "5ea9bc5f811dd8b0",
+        "type": "inject",
+        "z": "bce4a3f29b113e68",
+        "name": "airVelocity",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0.1",
+        "payloadType": "num",
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "46580f2f1cafdd22"
+            ]
+        ]
+    },
+    {
+        "id": "682448c8308e664b",
+        "type": "inject",
+        "z": "bce4a3f29b113e68",
+        "name": "relativeHumidity",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "50",
+        "payloadType": "num",
+        "x": 320,
+        "y": 360,
+        "wires": [
+            [
+                "e40352ca7088b1c1"
+            ]
+        ]
+    },
+    {
+        "id": "9fc6c19d93b856f7",
+        "type": "inject",
+        "z": "bce4a3f29b113e68",
+        "name": "metabolicRate",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1.0",
+        "payloadType": "num",
+        "x": 330,
+        "y": 420,
+        "wires": [
+            [
+                "e059de8ac1d32f85"
+            ]
+        ]
+    },
+    {
+        "id": "763a3bb07b7a1138",
+        "type": "inject",
+        "z": "bce4a3f29b113e68",
+        "name": "clothingInsulation",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0.5",
+        "payloadType": "num",
+        "x": 320,
+        "y": 480,
+        "wires": [
+            [
+                "f6d59b6f6f9da2c8"
+            ]
+        ]
+    },
+    {
+        "id": "7f8f6b5bb19f8972",
+        "type": "change",
+        "z": "bce4a3f29b113e68",
+        "name": "airTemperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "airTemperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 220,
+        "wires": [
+            [
+                "e23021f2f361e457"
+            ]
+        ]
+    },
+    {
+        "id": "4afa09d98bc1c3a0",
+        "type": "change",
+        "z": "bce4a3f29b113e68",
+        "name": "radiantTemperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "radiantTemperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "e23021f2f361e457"
+            ]
+        ]
+    },
+    {
+        "id": "46580f2f1cafdd22",
+        "type": "change",
+        "z": "bce4a3f29b113e68",
+        "name": "airVelocity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "airVelocity",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "e23021f2f361e457"
+            ]
+        ]
+    },
+    {
+        "id": "e40352ca7088b1c1",
+        "type": "change",
+        "z": "bce4a3f29b113e68",
+        "name": "relativeHumidity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "relativeHumidity",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [
+                "e23021f2f361e457"
+            ]
+        ]
+    },
+    {
+        "id": "e059de8ac1d32f85",
+        "type": "change",
+        "z": "bce4a3f29b113e68",
+        "name": "metabolicRate",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "metabolicRate",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 420,
+        "wires": [
+            [
+                "e23021f2f361e457"
+            ]
+        ]
+    },
+    {
+        "id": "f6d59b6f6f9da2c8",
+        "type": "change",
+        "z": "bce4a3f29b113e68",
+        "name": "clothingInsulation",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "clothingInsulation",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "e23021f2f361e457"
+            ]
+        ]
+    },
+    {
+        "id": "8e6cdab2cbb983a6",
+        "type": "comment",
+        "z": "bce4a3f29b113e68",
+        "name": "PMV and PPD indices calculations",
+        "info": "Calculating PMV (Predicted Mean Vote) and PPD (Predicted Percentage of Dissatisfied) indices according to the ISHRAE (Indian Society of Heating, Refrigerating and Air Conditioning Engineers) Thermal Comfort Standard.\n",
+        "x": 300,
+        "y": 80,
+        "wires": []
+    }
+]
